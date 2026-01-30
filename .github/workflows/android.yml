@@ -16,4 +16,8 @@ jobs:
           sudo apt-get install -y python3-pip git zip unzip openjdk-11-jdk
           pip3 install --upgrade cython
           pip3 install --upgrade buildozer
+      - name: Build APK
+        run: |
+          buildozer android debug
+
 
