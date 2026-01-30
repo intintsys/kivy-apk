@@ -13,9 +13,11 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y python3-pip git zip unzip openjdk-11-jdk
+          sudo apt-get install -y python3-pip git zip unzip openjdk-11-jdk wget
           pip3 install --upgrade cython
           pip3 install --upgrade buildozer
+          # Accept Android SDK licenses automatically
+          yes | buildozer android update
       - name: Build APK
         run: |
           buildozer android debug
