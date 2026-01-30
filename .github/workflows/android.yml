@@ -30,7 +30,7 @@ jobs:
           rm cmdline-tools.zip
 
           # Build the APK
-          buildozer android debug
+          buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
